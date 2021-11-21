@@ -83,6 +83,33 @@ export class AppRoutingModule { }
 /*RECORDAR QUE SI QUIERES QUE ESTO FUNCIONE, EN EL COMPONENTE QUE QUIERES QUE FUNCIONE (GENERALMENTE app.component.html)
 SE DEBE PONER SOLAMENTE LA ETIQUETA <router-outlet></router-outlet>*/
 
+--------------------------------------------
+:Pasando parametros por ruta mediante link o hipervinculo:
+--------------------------------------------
+mas o menos es algo asi [routerLink]="['ruta_del_componente_al _cual_quieres_ir',parametro_que_pasas]
+products/ es una ruta definida en el app-routing.module.ts y que lleva a un componente llamado en mi caso DetailsProductComponent
+
+ej:
+<h2><a [routerLink]="['products/',product.id]">{{product.name}}</a></h2>
+
+El componente que recibe es DetailsProductComponent haremos que se vea el id que se recibe
+
+[TS]
+...
+import { ActivatedRoute } from '@angular/router';
+...
+export class DetailsProductComponent implements OnInit {
+  public numberid: string|null = ""; //variable que recibe el id
+  constructor( private route:ActivatedRoute) {
+    const productid=this.route.snapshot.paramMap.get('id');
+    this.numberid=productid; //pintando el id
+   }
+  ngOnInit(): void {}
+}
+
+[HTML]
+<span >el id es {{numberid}} </span>
+
 ===================================================
 // *********************************************************************
 // ************************** ANGULAR 8 ********************************

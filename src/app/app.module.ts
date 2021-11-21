@@ -7,6 +7,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { Error404Component } from './error404/error404.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     HomePageComponent,
     Error404Component,
     DetailsProductComponent,
+    ProductListComponent,
 
   ],
   imports: [
