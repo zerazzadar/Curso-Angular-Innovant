@@ -85,6 +85,7 @@ SE DEBE PONER SOLAMENTE LA ETIQUETA <router-outlet></router-outlet>*/
 
 --------------------------------------------
 :Pasando parametros por ruta mediante link o hipervinculo:
+:pasar parametro por ruta mediante link o hipervinculo:
 --------------------------------------------
 mas o menos es algo asi [routerLink]="['ruta_del_componente_al _cual_quieres_ir',parametro_que_pasas]
 products/ es una ruta definida en el app-routing.module.ts y que lleva a un componente llamado en mi caso DetailsProductComponent
