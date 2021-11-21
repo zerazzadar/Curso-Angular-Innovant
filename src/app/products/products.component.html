@@ -1,1 +1,5 @@
-<p>products works!</p>
+<ul>
+  <li *ngFor="let user of users">
+    {{user.nombre}} : <span *ngIf="user.edad!=0">{{user.edad}}</span>
+  </li>
+</ul>

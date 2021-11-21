@@ -52,11 +52,38 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'primero';
 }
 
+--------------------------------------------
+:Routing:
+--------------------------------------------
+Este es el ejemplo de un fichero app-routing.module, Recordar que debe estar importado en el app.module.ts
 
+import { NgModule } from '@angular/core';
+import { Routes,RouterModule } from '@angular/router';
+import { DetailsProductComponent } from './details-product/details-product.component';
+import { Error404Component } from './error404/error404.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ProductsComponent } from './products/products.component';
 
+const routes: Routes=[
+  {path:'',component:HomePageComponent},//componente que se cargara en la ruta raiz http://localhost:4200
+  {path:'products',component:ProductsComponent},//si la ruta es http://localhost:4200/products
+  {path:'products/:id',component:DetailsProductComponent},//si la ruta http://localhost:4200/products/55 (u otro id)
+  {path:'**',component:Error404Component} //si no se encuentra ninguna de las rutas anteriores, se manda a la pagina de error
+  /* esta ultima linea debe ser siempre la ultima, pues hace match con TODO y se supone que se captura si no
+   se encuentra ninguna de las rutas anteriores. Si la pones delante de otra, el codigo se va a ir por ésta linea
+   sin considerar las que vengan despues */
+];
 
+@NgModule({
+imports:[RouterModule.forRoot(routes)],
+exports:[RouterModule],
+})
+export class AppRoutingModule { }
 
+/*RECORDAR QUE SI QUIERES QUE ESTO FUNCIONE, EN EL app.component.html
+SE DEBE PONER SOLAMENTE LA ETIQUETA <router-outlet></router-outlet>*/
 
+SE PONE
 ===================================================
 // *********************************************************************
 // ************************** ANGULAR 8 ********************************
@@ -347,6 +374,7 @@ ng new store
 
 --------------------------------------------
 :GENERAR NUEVO COMPONENTE:
+:CREAR UN NUEVO COMPONENTE:
 --------------------------------------------
 ng generate component shared/component/header
 ng g c nombre
