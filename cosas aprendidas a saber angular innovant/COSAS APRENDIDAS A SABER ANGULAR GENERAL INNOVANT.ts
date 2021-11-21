@@ -80,10 +80,9 @@ exports:[RouterModule],
 })
 export class AppRoutingModule { }
 
-/*RECORDAR QUE SI QUIERES QUE ESTO FUNCIONE, EN EL app.component.html
+/*RECORDAR QUE SI QUIERES QUE ESTO FUNCIONE, EN EL COMPONENTE QUE QUIERES QUE FUNCIONE (GENERALMENTE app.component.html)
 SE DEBE PONER SOLAMENTE LA ETIQUETA <router-outlet></router-outlet>*/
 
-SE PONE
 ===================================================
 // *********************************************************************
 // ************************** ANGULAR 8 ********************************
