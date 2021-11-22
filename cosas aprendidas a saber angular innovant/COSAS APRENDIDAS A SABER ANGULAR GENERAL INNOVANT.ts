@@ -136,6 +136,29 @@ constructor( private dataSvc:DataService)
 si recibes un nodo de un arreglo lo puedes destructurar asi no tienes que poner  [0]
 
 let [variable]:any= arreglo_que_tiene_solo_un_nodo
+
+--------------------------------------------
+:BOTON PARA REGRESAR ATRAS:
+--------------------------------------------
+1- importar
+[TS]
+import { Location } from '@angular/common';
+
+2- Inyectar en constructor
+...
+constructor(
+  private location: Location
+)
+
+3-Implementar Funcion
+public onGoBack(): void {
+  this.location.back();
+}
+
+4
+[HTML]
+<button class="btn btn-primary" (click)="onGoBack()"> Go back</button>
+
 ===================================================
 // *********************************************************************
 // ************************** ANGULAR 8 ********************************
