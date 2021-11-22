@@ -118,6 +118,24 @@ Buscas el archivo Index.html
 debajo del </body> pones esto
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+--------------------------------------------
+:USAR UN SERVICIO:
+--------------------------------------------
+1- Incluirlo en el import
+import {DataService} from '../shared/data.service'
+
+2- Inyectarlo en el constructor
+constructor( private dataSvc:DataService)
+
+3- Y ya puedes usar "dataSvc" en todo el componente porque ya es visible
+
+--------------------------------------------
+:DESTRUCTURING:
+--------------------------------------------
+si recibes un nodo de un arreglo lo puedes destructurar asi no tienes que poner  [0]
+
+let [variable]:any= arreglo_que_tiene_solo_un_nodo
 ===================================================
 // *********************************************************************
 // ************************** ANGULAR 8 ********************************
@@ -445,7 +463,7 @@ m => modulo
 --route => ruta
 
 --------------------------------------------
-: CREAR UN SERVICIO :
+: Generar UN SERVICIO :
 --------------------------------------------
 ng g service pages/products/services/products --skip-tests
 

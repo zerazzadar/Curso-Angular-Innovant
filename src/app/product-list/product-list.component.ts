@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-
-  public products= [
-    {
-      id:1,
-      name:'egg',
-      category:'Food',
-      description:'egg for food',
-      price: '2'
-
-    },
-    {
-      id:2,
-      name:'meat',
-      category:'Food',
-      description:'meat for food',
-      price: '20.21'
-
-    }
-  ]
-  constructor() { }
+  public products: any = [];
+  constructor(private dataSvc: DataService) {}
 
   ngOnInit(): void {
+    this.GetAllProduct();
   }
 
+  private GetAllProduct() {
+    this.products = this.dataSvc.getallProduct();
+  }
+
+  public insertpproducto(): void {
+    const nuevoproducto = {
+      id: 3,
+      name: 'platanos',
+      category: 'Food',
+      description: 'banana for food',
+      price: '0.50',
+    };
+    this.dataSvc.putProduct(nuevoproducto);
+    this.GetAllProduct();
+  }
 }
